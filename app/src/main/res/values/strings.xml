@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EpiFi-Project</string>
+    <string name="details_submitted_label">Details submitted successfully</string>
+    <string name="disclaimer_label">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. Learn more</string>
+    <string name="primary_btn_label">Next</string>
+    <string name="secondary_btn_label">I don\'t have a PAN</string>
+    <string name="logo_label">S.</string>
+    <string name="birthdate_label">BIRTHDATE</string>
+    <string name="pan_number_label">PAN NUMBER</string>
+    <string name="onboarding_title_label">First of the few steps to set you up with a Bank Account</string>
+</resources>
