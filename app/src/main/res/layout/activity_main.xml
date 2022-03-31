@@ -17,11 +17,10 @@
         android:textColor="@color/logo_red_color"
         android:textSize="@dimen/dimen_32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0"
-        app:layout_constraintVertical_chainStyle="packed" />
+         />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -32,7 +31,6 @@
         android:textColor="@color/black_color"
         android:textSize="@dimen/dimen_24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tvPanLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvIcon"
         app:layout_constraintTop_toBottomOf="@id/tvIcon"
@@ -42,11 +40,11 @@
         android:id="@+id/tvPanLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_24dp"
         android:text="@string/pan_number_label"
         android:textColor="@color/text_fields_label"
         android:textSize="@dimen/dimen_12sp"
         android:textStyle="bold"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/textInputPan"
         app:layout_constraintStart_toStartOf="@id/textInputPan"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -91,8 +89,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputBirthDate"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="@dimen/dimen_80dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/textInputMonth"
+        android:layout_marginBottom="@dimen/dimen_40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDisclaimer"
         app:layout_constraintStart_toStartOf="@id/textInputPan"
         app:layout_constraintTop_toBottomOf="@id/tvBirthDateLabel">
 
@@ -111,10 +112,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputMonth"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="@dimen/dimen_80dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_16dp"
         app:layout_constraintBottom_toBottomOf="@id/textInputBirthDate"
+        app:layout_constraintEnd_toStartOf="@id/birthDateGuideline"
         app:layout_constraintStart_toEndOf="@id/textInputBirthDate"
         app:layout_constraintTop_toTopOf="@id/textInputBirthDate">
 
@@ -138,7 +140,7 @@
         android:layout_marginStart="@dimen/dimen_16dp"
         app:layout_constraintBottom_toBottomOf="@id/textInputMonth"
         app:layout_constraintEnd_toEndOf="@id/textInputPan"
-        app:layout_constraintStart_toEndOf="@id/textInputMonth"
+        app:layout_constraintStart_toEndOf="@id/birthDateGuideline"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintTop_toTopOf="@id/textInputMonth">
 
@@ -153,6 +155,13 @@
             android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/birthDateGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55"/>
 
     <TextView
         android:id="@+id/tvDisclaimer"
